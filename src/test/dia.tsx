@@ -1,24 +1,19 @@
-import React from "react";
+import React, {useRef, useEffect, useCallback, useState} from "react";
 // import styled, {css} from "styled-components";
 import "./css/phone.css";
 import { DataGrid } from '@mui/x-data-grid';
 import Button from '@mui/material/Button';
-import { Link } from 'react-router-dom'
 
-export default function PhoneMin() {
+
+export default function dia() {
+  
+
   return (
-
-    <>
+  <>
     <div className="wap">
-    <div className="div">
-    <Button className="but" variant="contained">ダイアログの表示</Button>
-    <Link to="/">
-      <Button className="but" variant="contained">表示件数の切り替え</Button>
-    </Link>
-    </div>
-      <dialog className="dia2" open>
+      <dialog className="dia">
       <h3 className="show">10件選択中</h3>
-        <div style={{ height: 300, width: '100%' }}>
+        <div style={{ height: 500, width: '100%' }}>
           <DataGrid
             columns={[{ field: 'PartNumber' }, { field: 'QO' }]}
             rows={[
@@ -91,4 +86,4 @@ export default function PhoneMin() {
     </div>
   </>
   );
-}
+};

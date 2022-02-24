@@ -1,19 +1,19 @@
-import React, {useRef, useEffect, useCallback} from "react";
+import React, {useRef, useEffect, useCallback, useState} from "react";
 // import styled, {css} from "styled-components";
 import "./css/phone.css";
 import { DataGrid } from '@mui/x-data-grid';
 import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom'
-
+import Dia from "./dia";
 export default function Phone() {
-  const ref: React.MutableRefObject<HTMLElement | null> = useRef(null);
+  // const ref: React.MutableRefObject<HTMLElement | null> = useRef(null);
 
-  console.log("mount", ref.current);
+  // console.log("mount", ref.current);
 
-  useEffect(() => {
-  console.log("mounted", ref.current);
+  // useEffect(() => {
+  // console.log("mounted", ref.current);
 
-  }, []);
+  // }, []);
 
   // const showModal = useCallback(() => {
   //   if (ref.current) {
@@ -26,15 +26,25 @@ export default function Phone() {
   //     ref.current.close();
   //   }
   // }, []);
+
+  const [isOpen, setIsOpen] = useState(false);
+  const handleClick = () => {
+    console.log("hi");
+    
+			isOpen ? setIsOpen(false) : setIsOpen(true);
+  };
   return (
 
     <>
-    <div className="wap">
-    <Button className="but" variant="contained">ダイアログの表示</Button>
+    <div id="dialog" className="wap">
+      <div className="div">
+      <Button onClick={handleClick} className="but" variant="contained">ダイアログの表示</Button>
     <Link to="/phone">
       <Button className="but" variant="contained">表示件数の切り替え</Button>
     </Link>
-      <dialog ref={ref} className="dia" open>
+      </div>
+    {isOpen && <Dia />}
+      <dialog className="dia" open>
       <h3 className="show">10件選択中</h3>
         <div style={{ height: 500, width: '100%' }}>
           <DataGrid
@@ -106,6 +116,7 @@ export default function Phone() {
             </div>
         </div>
       </dialog>
+      
     </div>
   </>
   );
