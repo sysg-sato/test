@@ -1,0 +1,29 @@
+.wap {
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(197, 197, 197);
+}
+
+.dia {
+    top: 160px;
+}
+
+.dia2 {
+    top: 360px;
+}
+
+.show {
+    margin: 0;
+    text-align: center;
+}
+
+
+.button {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.b {
+    margin-left: 10%;
+    margin-right: 15%;
+}

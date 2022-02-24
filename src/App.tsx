@@ -1,24 +1,26 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import Phone from './test/phone';
+import Mui from './test/Mui';
+import PhoneMin from './test/phoneMin';
+// import './App.css';
 
-function App() {
+import {
+  Route,
+  Routes,
+  BrowserRouter
+} from 'react-router-dom';
+
+const App:React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Phone />} />
+              <Route path=":Mui" element={<Mui />} />
+              <Route path="/phone" element={<PhoneMin />} />
+            </Routes>
+        </BrowserRouter>
     </div>
   );
 }
