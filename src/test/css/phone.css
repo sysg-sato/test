@@ -5,11 +5,13 @@
 }
 
 .dia {
-    top: 160px;
+    top: 27%;
+    background-color: rgb(255, 239, 236);
 }
 
 .dia2 {
-    top: 360px;
+    top: 50%;
+    background-color: rgb(255, 239, 236);
 }
 
 .show {
@@ -24,6 +26,6 @@
 }
 
 .b {
-    margin-left: 10%;
-    margin-right: 15%;
+    margin-left: 2rem;
+    margin-right: 2.5rem;
 }
