@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useRef, useEffect, useCallback} from "react";
 // import styled, {css} from "styled-components";
 import "./css/phone.css";
 import { DataGrid } from '@mui/x-data-grid';
@@ -6,6 +6,26 @@ import Button from '@mui/material/Button';
 import { Link } from 'react-router-dom'
 
 export default function Phone() {
+  const ref: React.MutableRefObject<HTMLElement | null> = useRef(null);
+
+  console.log("mount", ref.current);
+
+  useEffect(() => {
+  console.log("mounted", ref.current);
+
+  }, []);
+
+  // const showModal = useCallback(() => {
+  //   if (ref.current) {
+  //     ref.current.showModal();
+  //   }
+  // }, []);
+
+  // const closeModal = useCallback(() => {
+  //   if (ref.current) {
+  //     ref.current.close();
+  //   }
+  // }, []);
   return (
 
     <>
@@ -14,7 +34,7 @@ export default function Phone() {
     <Link to="/phone">
       <Button className="but" variant="contained">表示件数の切り替え</Button>
     </Link>
-      <dialog className="dia" open>
+      <dialog ref={ref} className="dia" open>
       <h3 className="show">10件選択中</h3>
         <div style={{ height: 500, width: '100%' }}>
           <DataGrid
